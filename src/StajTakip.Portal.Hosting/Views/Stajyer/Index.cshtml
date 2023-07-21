@@ -1,0 +1,45 @@
+﻿@using StajTakip.Data.Entities
+@model List<Stajyer>
+
+@{
+    ViewBag.Title = "Index";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<a class=" btn btn-success" href="/Stajyer/Ekle">Yeni Stajyer Ekle</a>
+@*@Html.ActionLink("Yeni Stajyer Ekle", "Ekle", null, new {@class="btn btn-success"})*@
+<h2>Stajyer Listesi</h2>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>TC No</th>
+            <th>Departman</th>
+            <th>Ad</th>
+            <th>Soyad</th>
+            <th>Telefon</th>
+            <th>Başlama Tarihi</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var Stajyer in Model)
+        {
+        <tr>
+            <td>@Stajyer.Id</td>
+            <td>@Stajyer.Departman</td>
+            <td>@Stajyer.Ad</td>
+            <td>@Stajyer.Soyad</td>
+            <td>@Stajyer.Telefon</td>
+            <td>@Stajyer.BaslamaTarihi.Value.ToString("dd-MM-yyyy")</td>
+            <td>@Html.ActionLink("Güncelle", "Guncelle", new { id = Stajyer.Id }, new { @class = "btn btn-primary" })</td>
+            <td>@Html.ActionLink("Sil", "Sil", new { id = Stajyer.Id }, new { @class = "btn btn-danger" })</td>
+
+
+            @*<td><a class="btn btn-primary" href="/Stajyer/Guncelle/@Stajyer.Id">Güncelle</a></td>
+        <td><a class="btn btn-warning" href="/Stajyer/Sil/@Stajyer.Id">Sil</a></td>*@
+        </tr>
+
+        }
+
+    </tbody>
+</table>
+

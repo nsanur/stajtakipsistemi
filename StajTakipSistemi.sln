@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33829.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "resources", "resources", "{979F4E05-3DB6-4DF3-948F-39E5D7E81613}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{369916D6-2ACA-4356-9D5E-1C667E421A6D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StajTakip.Portal.Hosting", "src\StajTakip.Portal.Hosting\StajTakip.Portal.Hosting.csproj", "{2426FF56-6DC2-4952-B546-C6A0F1A99ADC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StajTakip.Data", "src\StajTakip.Data\StajTakip.Data.csproj", "{484BDC1E-164C-4ECB-8BE8-5491CA961067}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StajTakip.Application.Contracts", "src\StajTakip.Application.Contracts\StajTakip.Application.Contracts.csproj", "{2026ED29-397E-45E9-BFF5-3F0EFD689853}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StajTakip.Application.Manager", "src\StajTakip.Application.Manager\StajTakip.Application.Manager.csproj", "{7F3644CE-9459-4ACA-B65C-CA0D24FDB2B2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2426FF56-6DC2-4952-B546-C6A0F1A99ADC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2426FF56-6DC2-4952-B546-C6A0F1A99ADC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2426FF56-6DC2-4952-B546-C6A0F1A99ADC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2426FF56-6DC2-4952-B546-C6A0F1A99ADC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{484BDC1E-164C-4ECB-8BE8-5491CA961067}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{484BDC1E-164C-4ECB-8BE8-5491CA961067}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{484BDC1E-164C-4ECB-8BE8-5491CA961067}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{484BDC1E-164C-4ECB-8BE8-5491CA961067}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2026ED29-397E-45E9-BFF5-3F0EFD689853}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2026ED29-397E-45E9-BFF5-3F0EFD689853}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2026ED29-397E-45E9-BFF5-3F0EFD689853}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2026ED29-397E-45E9-BFF5-3F0EFD689853}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F3644CE-9459-4ACA-B65C-CA0D24FDB2B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F3644CE-9459-4ACA-B65C-CA0D24FDB2B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F3644CE-9459-4ACA-B65C-CA0D24FDB2B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F3644CE-9459-4ACA-B65C-CA0D24FDB2B2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2426FF56-6DC2-4952-B546-C6A0F1A99ADC} = {369916D6-2ACA-4356-9D5E-1C667E421A6D}
+		{484BDC1E-164C-4ECB-8BE8-5491CA961067} = {369916D6-2ACA-4356-9D5E-1C667E421A6D}
+		{2026ED29-397E-45E9-BFF5-3F0EFD689853} = {369916D6-2ACA-4356-9D5E-1C667E421A6D}
+		{7F3644CE-9459-4ACA-B65C-CA0D24FDB2B2} = {369916D6-2ACA-4356-9D5E-1C667E421A6D}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5AEB7381-4EDA-4578-B302-68B84B451EDA}
+	EndGlobalSection
+EndGlobal
