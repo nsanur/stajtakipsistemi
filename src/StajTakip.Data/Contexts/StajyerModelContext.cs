@@ -18,7 +18,7 @@ namespace StajTakip.Data.Contexts
         }
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            builder.Entity<Stajyer>().ToTable("stajyer");
+            builder.Entity<Stajyer>().ToTable("Stajyer");
 
             base.OnModelCreating(builder);
         }

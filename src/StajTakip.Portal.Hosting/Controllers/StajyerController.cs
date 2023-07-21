@@ -31,8 +31,7 @@ namespace StajyerTakipSistemi.Controllers
         [HttpPost]
         public IActionResult Kaydet(Stajyer stajyer)
         {
-
-            if (stajyer.Id == null)//Ekle
+            if (string.IsNullOrEmpty(stajyer.Id))//Ekle
             {
                 _stajyerService.Kaydet(stajyer);
             }

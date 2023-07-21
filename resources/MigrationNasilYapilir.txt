@@ -1,0 +1,6 @@
+﻿Package Manager Console açılır
+DBCOntext olan proje seçilir. Bu durumda StajTakip.Data
+Add-Migration çalıştırılıp bir isim verilir.
+Daha sonra default connection string olan portal projesi seçilerek aşağıdaki komut çalıştırılır.
+Bu durumda StajTakip.Portal.Hosting projesi oluyor.
+Update-Database

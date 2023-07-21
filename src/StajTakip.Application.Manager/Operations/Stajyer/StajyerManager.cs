@@ -1,4 +1,5 @@
-﻿using StajTakip.Application.Contracts.Operations;
+﻿using Microsoft.EntityFrameworkCore;
+using StajTakip.Application.Contracts.Operations;
 using StajTakip.Data.Contexts;
 using StajTakip.Data.Entities;
 using System;
@@ -29,11 +30,19 @@ namespace StajTakip.Application.Manager.Operations
 
         public void Guncelle(Stajyer stajyer)
         {
-            throw new NotImplementedException();
+            var find = Get(stajyer.Id);
+            find.Telefon = stajyer.Telefon;
+            find.Departman = stajyer.Departman;
+            find.Ad = stajyer.Ad;
+            find.Soyad= stajyer.Soyad;
+            find.BaslamaTarihi = stajyer.BaslamaTarihi;
+            _dbContext.Update(find);
+            _dbContext.SaveChanges();
         }
 
         public void Kaydet(Stajyer stajyer)
         {
+            _dbContext.Stajyers.Add(stajyer);
             throw new NotImplementedException();
         }
 
