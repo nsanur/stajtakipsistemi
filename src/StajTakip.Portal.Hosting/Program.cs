@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using StajTakip.Application.Contracts.Operations;
 using StajTakip.Application.Manager.Operations;
 using StajTakip.Data.Contexts;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -24,29 +25,45 @@ var builder = WebApplication.CreateBuilder(args);
             .UseLoggerFactory(LoggerFactory.Create(builder => builder.AddConsole()));
     });
 
+    services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).
+        AddCookie(option =>
+        {
+            // option.Cookie.Name = "NetCoreMVC.Auth";
+            option.LoginPath = "/Access/Login";
+            option.LogoutPath = "/Access/Logout";
+            option.AccessDeniedPath = "/Error/AccessDenied";
+           //option.ExpireTimeSpan = TimeSpan.FromMinutes(20);
+        });
+
     services.AddScoped<IStajyerService, StajyerManager>();
 }
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (!app.Environment.IsDevelopment())
+// start of builder conf
 {
-    app.UseExceptionHandler("/Home/Error");
+    // Configure the HTTP request pipeline.
+    if (!app.Environment.IsDevelopment())
+    {
+        app.UseExceptionHandler("/Home/Error");
+    }
+    else
+    {
+        app.UseDeveloperExceptionPage();
+    }
+
+    app.UseStaticFiles();
+
+    app.UseRouting();
+
+    app.UseAuthentication();
+
+    app.UseAuthorization();
+
+    app.MapControllerRoute(
+        name: "default",
+        pattern: "{controller=Home}/{action=Index}/{id?}");
 }
-else
-{
-    app.UseDeveloperExceptionPage();
-}
-
-app.UseStaticFiles();
-
-app.UseRouting();
-
-app.UseAuthorization();
-
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+// end of builder conf
 
 app.Run();

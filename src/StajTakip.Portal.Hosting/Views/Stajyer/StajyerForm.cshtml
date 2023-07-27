@@ -1,11 +1,13 @@
 ﻿@model StajTakip.Data.Entities.Stajyer
 
+
+
 @{
     ViewBag.Title = "StajyerForm";
     //Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Kayit</h2>
+<h2>Kayıt</h2>
 
 @*<form method="post" action="index">
         <div class="form-group">
@@ -17,9 +19,16 @@
 
 @using (Html.BeginForm("Kaydet", "Stajyer", FormMethod.Post))
 {
-    <div class="form-group">
+    @Html.AntiForgeryToken()
+    /*<div class="form-group">
         @Html.LabelFor(m => m.Id)
         @Html.TextBoxFor(m => m.Id, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Id)
+    </div>*/
+    <div class="form-group">
+        @Html.LabelFor(m => m.TcNo)
+        @Html.TextBoxFor(m => m.TcNo, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.TcNo)
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Departman)
@@ -28,10 +37,12 @@
     <div class="form-group">
         @Html.LabelFor(m => m.Ad)
         @Html.TextBoxFor(m => m.Ad, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Ad)
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Soyad)
         @Html.TextBoxFor(m => m.Soyad, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Soyad)
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Telefon)
@@ -39,8 +50,14 @@
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.BaslamaTarihi)
-        @Html.TextBoxFor(m => m.BaslamaTarihi,"{0:yyyy-MM-dd}", new { @class = "form-control", type="date"})
+        @Html.TextBoxFor(m => m.BaslamaTarihi, "{0:yyyy-MM-dd}", new { @class = "form-control", type = "date" })
     </div>
     @Html.HiddenFor(m => m.Id);
-    <button type="submit" class="btn btn-success">Kaydet</button>
+    <button style="margin-top:15px" type="submit" class="btn btn-success">Kaydet</button>
+}
+
+
+@section validate{
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
 }

@@ -1,11 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using StajTakip.Data.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
+using StajTakip.Data.Migrations;
 
 namespace StajTakip.Data.Contexts
 {
@@ -24,6 +19,6 @@ namespace StajTakip.Data.Contexts
         }
 
         public DbSet<Stajyer> Stajyers { get; set; }
-
     }
+
 }

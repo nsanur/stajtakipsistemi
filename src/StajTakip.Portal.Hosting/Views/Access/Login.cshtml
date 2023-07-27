@@ -1,0 +1,110 @@
+﻿@model StajTakip.Portal.Hosting.Models.LoginModel;
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Giriş</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-container {
+            
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+
+            .login-container h1 {
+                text-align: center;
+                margin-bottom: 20px;
+                color: #333;
+            }
+
+            .login-container input {
+                
+                display: block;
+                width: 100%;
+                padding: 10px;
+                margin-bottom: 15px;
+                border: 1px solid #ccc;
+                border-radius: 3px;
+                font-size: 16px;
+            }
+
+            .login-container label {
+
+                display: flex;
+                align-items: center;
+                font-size: 14px;
+            }
+
+            .login-container button {
+                
+                display: block;
+                width: 100%;
+                padding: 12px;
+                background-color: #4CAF50;
+                color: #fff;
+                border: none;
+                border-radius: 3px;
+                font-size: 16px;
+                cursor: pointer;
+            }
+
+                .login-container button:hover {
+                    background-color: #45a049;
+                }
+
+        .error-message {
+            color: red;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .password{
+            margin-right: 15px;
+        }
+
+        .email{
+            margin-right:15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1 style="text-align: center"><b>WebBrix Software</b></h1>
+        <h2 style="text-align: center" >Staj Takip Sistemine Giriş</h2>
+        @if (!string.IsNullOrEmpty((string)ViewData["ValidateMessage"]))
+        {
+            <p class="error-message">@((string)ViewData["ValidateMessage"])</p>
+        }
+        <form asp-controller="Access" asp-action="login" method="post">
+            <div class="email">
+                <input type="email" placeholder="E-posta" asp-for="Email" required />
+            </div>
+            <div class="password">
+                <input type="password" placeholder="Şifre" asp-for="Password" required />
+            </div>
+            <div>
+                <button type="submit">Giriş Yap</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

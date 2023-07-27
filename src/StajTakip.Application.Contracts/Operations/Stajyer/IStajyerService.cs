@@ -10,9 +10,11 @@ namespace StajTakip.Application.Contracts.Operations
     public interface IStajyerService
     {
         List<Stajyer> GetAll();
-        Stajyer Get(string id);
-        void Sil(string id);
+        Stajyer Get(int id);
+        void Sil(int id);
         void Kaydet(Stajyer stajyer);
         void Guncelle(Stajyer stajyer);
+        
+
     }
 }

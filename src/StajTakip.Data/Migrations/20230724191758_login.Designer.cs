@@ -12,8 +12,8 @@ using StajTakip.Data.Contexts;
 namespace StajTakip.Data.Migrations
 {
     [DbContext(typeof(StajyerModelContext))]
-    [Migration("20230721131950_initial")]
-    partial class Initial
+    [Migration("20230724191758_login")]
+    partial class Login
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -25,33 +25,24 @@ namespace StajTakip.Data.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("StajTakip.Data.Entities.Stajyer", b =>
+            modelBuilder.Entity("StajTakip.Data.Entities.Login", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
 
-                    b.Property<string>("Ad")
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Email")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(50)");
 
-                    b.Property<DateTime?>("BaslamaTarihi")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Departman")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Soyad")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Telefon")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<string>("Password")
+                        .HasColumnType("nvarchar(50)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Stajyer", (string)null);
+                    b.ToTable("Login", (string)null);
                 });
 #pragma warning restore 612, 618
         }
